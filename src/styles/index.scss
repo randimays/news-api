@@ -1,0 +1,80 @@
+$color-primary: #C7493A;
+$color-primary-dark: #A33327;
+$color-secondary: #689775;
+$color-tertiary: #917164;
+$color-tertiary-light: #AD8174;
+
+$bp-tablet: 768px;
+$bp-laptop: 1024px;
+
+@mixin brown-button {
+    padding: 6px 12px;
+    border: none;
+    background-color: $color-tertiary;
+    color: #fff;
+    font-weight: 600;
+}
+
+@import 'actions';
+@import 'article-meta';
+@import 'card';
+@import 'full-article';
+@import 'search';
+@import 'search-results';
+
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #272727;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+h1 {
+    max-width: 350px;
+    margin: 0 0 40px;
+    color: $color-secondary;
+    line-height: 2.25rem;
+    letter-spacing: -.5px;
+
+    @media screen and (min-width: $bp-tablet) {
+        max-width: 100%;
+        margin: 0 0 60px;
+        text-align: center;
+    }
+}
+
+main {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+
+    @media screen and (min-width: $bp-tablet) {
+        padding: 40px;
+    }
+
+    .articles,
+    .search-results div {
+        @media screen and (min-width: $bp-tablet) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        @media screen and (min-width: $bp-laptop) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .search-results {
+        button {
+            @include brown-button;
+        }
+    }
+}

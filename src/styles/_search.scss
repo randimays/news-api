@@ -1,0 +1,25 @@
+.search {
+    margin-bottom: 40px;
+
+    label {
+        font-size: .8rem;
+        font-weight: 500;
+
+        span {
+            display: block;
+        }
+    }
+
+    input {
+        height: 27px;
+        margin: 6px 6px 0 0;
+    }
+
+    button {
+        @include brown-button;
+
+        &:not(:last-child) {
+            margin-right: 10px;
+        }
+    }
+}
